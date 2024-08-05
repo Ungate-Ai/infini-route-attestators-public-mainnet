@@ -1,0 +1,20 @@
+version: '3.7'
+x-othentic-cli: &othentic-cli
+  env_file:
+    - .env
+  build:
+    context: .
+    dockerfile: ./Dockerfile
+services:
+  attester:
+    <<: *othentic-cli
+    command: [
+      "node",
+      "attester",
+      "/ip4/104.238.148.107/tcp/9876/p2p/${OTHENTIC_BOOTSTRAP_ID}",
+      "--avs-webapi",
+      "http://104.238.148.107",
+    ]
+    environment:
+      - PRIVATE_KEY=${PRIVATE_KEY_ATTESTER:-${PRIVATE_KEY_VALIDATOR1:-}}
+      - TASK_PERFORMER=0x0000000000000000000000000000000000000000
