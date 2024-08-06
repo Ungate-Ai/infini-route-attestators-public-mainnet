@@ -13,8 +13,29 @@ services:
       "attester",
       "/ip4/104.238.148.107/tcp/9876/p2p/${OTHENTIC_BOOTSTRAP_ID}",
       "--avs-webapi",
-      "http://104.238.148.107",
+      "http://10.1.0.42",
     ]
     environment:
       - PRIVATE_KEY=${PRIVATE_KEY_ATTESTER:-${PRIVATE_KEY_VALIDATOR1:-}}
       - TASK_PERFORMER=0x0000000000000000000000000000000000000000
+    networks:
+      p2p:
+        ipv4_address: 10.1.0.2
+
+  avs-webapi:
+    build:
+      context: ./AVS_WebAPI
+      dockerfile: ./Dockerfile
+    env_file:
+      - .env
+    networks:
+      p2p:
+        ipv4_address: 10.1.0.42
+
+networks:
+  p2p:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.1.0.0/16
+         gateway: 10.1.0.1
