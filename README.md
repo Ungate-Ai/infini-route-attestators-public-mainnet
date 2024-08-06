@@ -20,11 +20,3 @@ validates tasks on behalf of the nodes. The attesters then sign the tasks based
 on the AVS WebAPI response.
 
 Attester nodes all communicate with a centralized endpoint.
-
-### AVS WebAPI
-```
-POST task/validate returns (bool) {"proofOfTask": "{proofOfTask}"};
-```
-Executing a task
-To execute a task we send a POST request to the Task Performer service:
-curl -X POST http://localhost:4003/task/execute
