@@ -1,7 +1,7 @@
 # Ungate AVS Operator Project 
 
-## ▶️ Run the demo
-We provide a sample docker-compose configuration which sets up the Attestor Nodes
+## ▶️ Run an Attestor Node
+We provide a  docker-compose configuration which sets up the Attestor Node
 
 To set up the environment, create a `.env` file with the usual Ungate
 configurations (see the `.env.example`), then run:
