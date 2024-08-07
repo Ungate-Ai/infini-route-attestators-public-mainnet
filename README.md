@@ -10,10 +10,6 @@ configurations (see the `.env.example`), then run:
 docker-compose up
 ```
 
-> [!NOTE]
-> This might take a few minutes when building the images
-
-
 ## 🏗️ Architecture
 The Ungate Attester nodes communicate with an AVS WebAPI endpoint which
 validates tasks on behalf of the nodes. The attesters then sign the tasks based
