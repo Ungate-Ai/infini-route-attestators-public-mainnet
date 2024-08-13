@@ -16,3 +16,6 @@ validates tasks on behalf of the nodes. The attesters then sign the tasks based
 on the AVS WebAPI response.
 
 Attester nodes all communicate with a centralized endpoint.
+
+![image](https://github.com/user-attachments/assets/bb118ec0-ae8d-4e01-8e76-9caee34182af)
+
