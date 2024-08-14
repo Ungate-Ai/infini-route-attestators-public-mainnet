@@ -2,7 +2,7 @@ FROM node:18
 
 RUN npm install -g npm@10.5.0
 
-ARG NPM_TOKEN=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
+ARG NPM_TOKEN=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
 
 WORKDIR /app
 
