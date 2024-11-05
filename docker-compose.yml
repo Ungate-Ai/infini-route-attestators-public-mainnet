@@ -6,8 +6,6 @@ x-othentic-cli: &othentic-cli
   build:
     context: .
     dockerfile: ./Dockerfile
-    args:
-      NPM_TOKEN: ${NPM_TOKEN}
 services:
   attester:
     <<: *othentic-cli
