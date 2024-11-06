@@ -26,15 +26,27 @@ services:
       p2p:
         ipv4_address: 10.1.0.2
 
+  #avs-webapi:
+  #  build:
+  #    context: ./AVS_WebAPI
+  #    dockerfile: ./Dockerfile
+  #  env_file:
+  #    - .env
+  #  networks:
+  #    p2p:
+  #      ipv4_address: 10.1.0.42
+
   avs-webapi:
     build:
       context: ./AVS_WebAPI
       dockerfile: ./Dockerfile
     env_file:
       - .env
+    ports:
+      - "4002:4002"
     networks:
       p2p:
-        ipv4_address: 10.1.0.42
+        ipv4_address: 10.8.0.42
 
 networks:
   p2p:
