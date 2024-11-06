@@ -45,7 +45,7 @@ services:
       - "4002:4002"
     networks:
       p2p:
-        ipv4_address: 10.8.0.42
+        ipv4_address: 10.1.0.42
 
 networks:
   p2p:
