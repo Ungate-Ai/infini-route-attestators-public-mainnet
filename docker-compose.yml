@@ -15,15 +15,17 @@ services:
       "--avs-webapi",
       "http://10.1.0.42",
       "--l1-chain", "mainnet",
-      "--l2-chain", "base",
-      "--p2p.datadir", "data/peerstore/ungate-attester"
+      "--l2-chain", "base"
     ]
+    ports:
+      - "40307:40307"
     environment:
       - PRIVATE_KEY=${PRIVATE_KEY_ATTESTER:-${PRIVATE_KEY_VALIDATOR1:-}}
       - TASK_PERFORMER=0x0000000000000000000000000000000000000000
       - OPERATOR_ADDRESS=${OPERATOR_ADDRESS}
+      - LOG_DIR=data/logs/ungate-attester
     volumes:
-      - ./data/peerstore/ungate-attester:/app/data/peerstore/ungate-attester
+      - ./data/logs/ungate-attester:/app/data/logs/ungate-attester
     networks:
       p2p:
         ipv4_address: 10.1.0.2
